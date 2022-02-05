@@ -1,12 +1,12 @@
 FROM node:16.13.2-alpine
 
-WORKDIR /src/app
+WORKDIR /src/backend
 
 COPY package.json .
 RUN npm install
 
 COPY . .
 
-EXPOSE 3333
+EXPOSE 8081
 
 CMD ["npm", "run", "dev"]

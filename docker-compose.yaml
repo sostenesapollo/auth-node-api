@@ -1,12 +1,23 @@
 version: "3"
 
 services:
-  backend:
-    build: "./backend"
+  api:
+    build: backend
     command: npm run dev
     ports:
-      - "3030:3333"
+      - "8081:8081"
     volumes:
-      - ./backend:/usr/app
-      
-  
+      - ./backend:/src/backend
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080

@@ -1,0 +1,9 @@
+{
+  "name": "authsys-backend",
+  "version": "0.0.1",
+  "description": "Back-end para Autenticaçao e Cadastro de Usuarios",
+  "main": "src/server.ts",
+  "repository": "https://github.com/JaoTz/AuthSys/backend",
+  "author": "Joao Pedro",
+  "license": "MIT"
+}

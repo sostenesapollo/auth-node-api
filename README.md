@@ -11,6 +11,7 @@
 ## Funcionalidades
 
 - Login
+- Execução automática de migrations e seed ( criação de usuário para testes )
 - Cadastro de Usuario
 - Edição de Usuario
 - Exclusão de Usuario

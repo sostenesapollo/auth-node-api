@@ -1,6 +1,13 @@
 
 # Auth Node API
 
+## Executar
+
+```bash
+  git clone https://github.com/sostenesapollo/auth-node-api.git
+  docker-compose up
+```
+
 ## Funcionalidades
 
 - Login
@@ -19,10 +26,6 @@
 
 #### Login
 
-
-> Usuário já cadastrado, verifique em [Visualizar usuários cadastrados](http://localhost:8080/?server=db&username=root&db=auth_sys&select=user)
-`{ "username": "root", "password": "root" }`
-
 ```http
   POST /login
 ```
@@ -31,6 +34,16 @@
 | :---------- | :--------- | :---------------------------------- |
 | `username` | `string` | **Obrigatório**. Nome de usuario |
 | `password` | `string` | **Obrigatório**. Senha de acesso |
+
+
+> Verifique os [Usuários cadastrados](http://localhost:8080/?server=db&username=root&db=auth_sys&select=user) usando o adminer.
+#### Usuário exemplo (já cadastrado)
+```
+{ 
+  "username": "root",
+  "password": "root"
+}
+```
 
 #### Retorna todos os Usuarios
 
@@ -89,10 +102,4 @@
 | :---------- | :--------- | :------------------------------------------ |
 | `Authorization`      | `string` | **Obrigatório**. JWT passado via Header Bearer |
 | `id`| `string` | **Obrigatório**. UUID do Usuario
-## Execução
-
-```bash
-  git clone https://github.com/JaoTz/AuthSys.git
-  docker-compose up
-```
     

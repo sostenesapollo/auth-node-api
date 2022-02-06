@@ -4,7 +4,8 @@
 ## Executar
 
 ```bash
-  git clone https://github.com/sostenesapollo/auth-node-api.git && cd auth-node-api
+  git clone https://github.com/sostenesapollo/auth-node-api.git
+  cd auth-node-api
   docker-compose up
 ```
 

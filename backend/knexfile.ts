@@ -6,7 +6,7 @@ const config: { [key: string]: Knex.Config } = {
   'development': {
     'client': 'mysql2',
     'connection': {
-      'host' : '0.0.0.0',
+      'host' : 'db',
       'port' : 3306,
       'user' : 'root',
       'password' : '123',

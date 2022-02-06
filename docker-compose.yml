@@ -2,15 +2,17 @@ version: "3"
 
 services:
   api:
+    container_name: api-auth-sys
+    image: node:16.13.0
     build: backend
-    command: npm run dev
+    command: bash -c "npm i && npm i -g knex && knex migrate:latest && knex seed:run && npm run dev"
     ports:
-      - "8081:8081"
+      - "8000:8000"
+    working_dir: /src/backend
     volumes:
       - ./backend:/src/backend
     depends_on:
       - db
-
   db:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
@@ -22,7 +24,6 @@ services:
       - 3306
     ports:
       - 3306:3306
-
   adminer:
     image: adminer
     restart: always

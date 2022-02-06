@@ -1,6 +1,6 @@
 import 'dotenv/config'
 import app from './app'
 
-app.listen(Number(process.env.PORT), String(process.env.HOST), () => {
-  console.log('Servidor rodando!')
+app.listen(process.env.PORT, () => {
+  console.log(`Servidor rodando: http://${process.env.HOST}:${process.env.PORT}`)
 })

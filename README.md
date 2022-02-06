@@ -1,6 +1,5 @@
 
-# Auth_Sys
-
+# Auth Node API
 
 ## Funcionalidades
 
@@ -19,6 +18,10 @@
 ## Documentação da API
 
 #### Login
+
+
+> Usuário já cadastrado, verifique em [Visualizar usuários cadastrados](http://localhost:8080/?server=db&username=root&db=auth_sys&select=user)
+`{ "username": "root", "password": "root" }`
 
 ```http
   POST /login
@@ -86,14 +89,10 @@
 | :---------- | :--------- | :------------------------------------------ |
 | `Authorization`      | `string` | **Obrigatório**. JWT passado via Header Bearer |
 | `id`| `string` | **Obrigatório**. UUID do Usuario
-## Instalação
-
-Instale my-project com npm
+## Execução
 
 ```bash
-  git clone https://github.com/JaoTz/AuthSys.git && cd AuthSys
-  npm install **or** yarn
-  cd ..
+  git clone https://github.com/JaoTz/AuthSys.git
   docker-compose up
 ```
     

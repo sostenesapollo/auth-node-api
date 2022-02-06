@@ -5,6 +5,17 @@ import { v4 as uuidv4 } from 'uuid'
 import bcrypt from 'bcrypt'
 
 class UserController {
+  async index(req: Request, res: Response): Promise<Response>{
+    try {
+      const users: IUser[] = await conn('user').select('id', 'username')
+
+      return res.status(200).json(users)
+    } catch (error) {
+      // Caso ocorra algum erro (Ex: Sem conexão com o Banco)
+      return res.status(400)
+        .json({error, 'msg': 'Não foi possivel estabelecer conexão com o banco de dados'})
+    }
+  }
   async findOne(req: Request, res: Response): Promise<Response> {
     // Pegando Paramentos do Request.Body
     const { id } = req.params;
